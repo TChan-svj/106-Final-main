@@ -1,0 +1,41 @@
+<a href="/post">Write a new topic</a>
+<a href="/post/{{postID}}">Write a new reply</a>
+
+<table style="width:100%">
+	<tr>
+		<th>Post Title</th>
+		<th>Category</th>
+		<th>Author</th>
+		<th>Score</th>
+		<th>Date</th>
+	</tr>
+	{% for topic in topics %}
+	<tr>
+		<td>{{ topic.text }}</td>
+		<td>{{ topic.tag }}</td>
+		<td>{{ topic.userID }}</td>
+		<td>{{ topic.score }}</td>
+		<td>{{ topic.time }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+<table style="width:100%">
+	<tr>
+		<th>Reply</th>
+		<th>Towards</th>
+		<th>Author</th>
+		<th>Score</th>
+		<th>Date</th>
+	</tr>
+	{% for topic in replies %}
+	<tr>
+		<td>{{ topic.text }}</td>
+		<td>{{ topic.recipient }}</td>
+		<td>{{ topic.userID }}</td>
+		<td>{{ topic.score }}</td>
+		<td>{{ topic.time }}</td>
+	</tr>
+	{% endfor %}
+</table>
